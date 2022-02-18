@@ -1,6 +1,9 @@
+import { DescribeCard } from "./components/DescribeCard";
 
 function App() {
-  return 
+  return (
+    <DescribeCard/>
+  )
 }
 
 export default App;
