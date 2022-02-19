@@ -1,3 +1,9 @@
+
+
+
+function App() {
+  return 
+
 import Banner from "./components/Banner/Banner";
 import { DescribeCard } from "./components/DescribeCard";
 import todoIMG from "./components/img/todoIMG.svg";
@@ -17,6 +23,7 @@ function App() {
       </div>
     </div>
   );
+
 }
 
 export default App;
