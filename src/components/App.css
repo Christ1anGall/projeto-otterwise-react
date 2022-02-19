@@ -1,0 +1,10 @@
+.container{
+    padding: 41px 60px;
+    
+}
+.Kanban{
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+
+}
