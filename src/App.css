@@ -1,6 +1,7 @@
 .container{
     padding: 41px 60px;
     
+    
 }
 .Kanban{
     display: flex;
@@ -8,3 +9,9 @@
     gap: 35px;
 
 }
+
+.text{
+    
+    
+}
+
