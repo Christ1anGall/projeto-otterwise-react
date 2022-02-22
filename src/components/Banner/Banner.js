@@ -1,28 +1,42 @@
 import React from "react";
+import './Banner.css'
 
+import { DescribeCard } from "../DescribeCard";
 
-
-const Banner = (props) => {
-  const { imgBanner, nameBanner, } = props;
-
+const Banner = ({data}) => {
   return (
-    <div className="containerCardBanner">
-      <div className="containerBanner">
-        <img src={imgBanner} alt="" />
-        <p className="titleBanner">{nameBanner}  </p>
-      </div >
-
-          <div >
-          <p className="text">asdasdasdasdlasdlasdlasldasld
-            lasdlasdlasldasldasl
-            asdlasdlasl
-        </p>
-        <p className="text">asdasdasdasdlasdlasdlasldasld
-            lasdlasdlasldasldasl
-            asdlasdlasl
-            </p>
+    <div className="containerBanner">
+      {data === undefined ? 
+        <div className='withoutCard'>
+          <h1 className="withoutProject">Sem Projetos</h1>
+        </div>
+        :  data?.map((item) => (
+          <div 
+          className="banner-bg" 
+          style={{backgroundColor: `${item.bgColorCard}`}}
+          >
+            <div className="headerBanner">
+              <img src={item.icon} alt="" />
+              <p 
+              className="titleBanner"  
+              style={{color: `${item.colorTitle}`}}>
+                {item.title}
+              </p>
+            </div>
+            <ul className="describeCards"> 
+              {item?.data?.map((item) => (
+                  <DescribeCard 
+                  name={item.name} 
+                  tag={item.tag} 
+                  img={item.image}
+                  bgColorTag={item.bgColorTag}
+                  colorTag={item.colorTag}
+                  />
+              ))}
+            </ul>
           </div>
-     
+        ))
+      }
     </div>
   );
 };
